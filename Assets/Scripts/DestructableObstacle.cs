@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class DestructableObstacle : MonoBehaviour
 {
     [SerializeField] GameObject deathFx;
     [SerializeField] Transform parent;
-    [SerializeField] int scorePerHit = 10;
+    [SerializeField] int scorePerHit = 5;
 
     ScoreBoard scoreBoard;
     int hitInFrame;
@@ -15,14 +14,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AddNonTriggerBoxCollider();
         scoreBoard = FindObjectOfType<ScoreBoard>();
-    }
-
-    private void AddNonTriggerBoxCollider()
-    {
-        Collider boxCollider = gameObject.AddComponent<BoxCollider>();
-        boxCollider.isTrigger = false;
     }
 
     private void OnParticleCollision(GameObject other)
