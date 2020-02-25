@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float xClamp = 5.3f;
     [SerializeField] float yPosClamp = 2.5f;
     [SerializeField] float yNegClamp = -2.5f;
+    [SerializeField] GameObject[] guns;
 
     [Header("Screen position based")]
     [SerializeField] float positionPitchFactor = -5f;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
             transform.localPosition = new Vector3(newXPos, newYPos, transform.localPosition.z);
 
             ProcessRotation();
+            ProcessFiring();
         }
         
     }
@@ -77,6 +79,34 @@ public class PlayerController : MonoBehaviour
         float roll = xThrow * controlRollFactor;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    private void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeactivateGuns();
+        }
+    }
+
+    private void ActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+
+    private void DeactivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(false);
+        }
     }
 
     private void DetermineDeath() // called by string reference

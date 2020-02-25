@@ -950,8 +950,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1306103779, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306103779, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 961478097}
+    - target: {fileID: 1306103779, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 961478096}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+--- !u!1 &961478096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 417355674774427751, guid: d39401e2891b1e4439d7839a3a24b3f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 961478095}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &961478097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 199711749, guid: d39401e2891b1e4439d7839a3a24b3f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 961478095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &996462418 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5932901766239897758, guid: 721a36c9d98883742939f9b3b2e19709,
